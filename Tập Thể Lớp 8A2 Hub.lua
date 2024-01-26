@@ -3240,7 +3240,28 @@ spawn(function()
 end)
 
 
-local ToggleCake = Tabs.Main:AddToggle("ToggleCake", {Title = "Farm Cake Prince", Default = false })
+local ToggleRandomBone = Tabs.Shop:AddToggle("ToggleRandomBone", {Title = "Random Bone", Default = false })
+ToggleRandomBone:OnChanged(function(Value)  
+		_G.AutoRandomBone = Value
+end)
+Options.ToggleRandomBone:SetValue(false)
+	
+spawn(function()
+	while wait(0.0000000000000000000000000000000000000000000000000001) do
+	if _G.AutoRandomBone then
+	local args = {
+	 [1] = "Bones",
+	 [2] = "Buy",
+	 [3] = 1,
+	 [4] = 1
+	}
+	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+	end
+	end
+	end)
+	
+
+local ToggleCake = Tabs.Main:AddToggle("ToggleCake", {Title = "Farm Cake Prince + Spam Cake Prince", Default = false })
 ToggleCake:OnChanged(function(Value)
  _G.CakePrince = Value
 end)
@@ -3757,7 +3778,7 @@ if Third_Sea then
     })
 
 
-    local ToggleElite = Tabs.Main:AddToggle("ToggleElite", {Title = "Auto Elite Hunter", Default = false })
+    local ToggleElite = Tabs.Main:AddToggle("ToggleElite", {Title = "Kill Elite Hunter", Default = false })
 
     ToggleElite:OnChanged(function(Value)
        _G.AutoElite = Value
@@ -4362,7 +4383,7 @@ end
 
 
 
-_G.FastAttackDelay = 0.15
+_G.FastAttackDelay = 0.105
 
     local Client = game.Players.LocalPlayer
     local STOP = require(Client.PlayerScripts.CombatFramework.Particle)
@@ -4504,7 +4525,7 @@ CamShake:Stop()
 
 
 
-    local ToggleBypassTP = Tabs.Setting:AddToggle("ToggleBypassTP", {Title = "Clear Report", Default = true })
+    local ToggleBypassTP = Tabs.Setting:AddToggle("ToggleBypassTP", {Title = "Bypass Tp [ Beta ]", Default = true })
     ToggleBypassTP:OnChanged(function(Value)
         BypassTP = Value
     end)
@@ -4546,28 +4567,28 @@ local ToggleX = Tabs.Setting:AddToggle("ToggleX", {Title = "Skill X", Default = 
 ToggleX:OnChanged(function(Value)
     SkillX = Value
 end)
-Options.ToggleX:SetValue(true)
+Options.ToggleX:SetValue(false)
 
 
 local ToggleC = Tabs.Setting:AddToggle("ToggleC", {Title = "Skill C", Default = true })
 ToggleC:OnChanged(function(Value)
     SkillC = Value
 end)
-Options.ToggleC:SetValue(true)
+Options.ToggleC:SetValue(false)
 
 
 local ToggleV = Tabs.Setting:AddToggle("ToggleV", {Title = "Skill V", Default = true })
 ToggleV:OnChanged(function(Value)
     SkillV = Value
 end)
-Options.ToggleV:SetValue(true)
+Options.ToggleV:SetValue(false)
 
 
 local ToggleF = Tabs.Setting:AddToggle("ToggleF", {Title = "Skill F", Default = true })
 ToggleF:OnChanged(function(Value)
    SkillF = Value
     end)
-Options.ToggleF:SetValue(true)
+Options.ToggleF:SetValue(false)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Stats
@@ -5897,27 +5918,6 @@ end)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --shop
-
-local ToggleRandomBone = Tabs.Shop:AddToggle("ToggleRandomBone", {Title = "Random Bone", Default = false })
-ToggleRandomBone:OnChanged(function(Value)  
-		_G.AutoRandomBone = Value
-end)
-Options.ToggleRandomBone:SetValue(false)
-	
-spawn(function()
-	while wait(0.0000000000000000000000000000000000000000000000000001) do
-	if _G.AutoRandomBone then
-	local args = {
-	 [1] = "Bones",
-	 [2] = "Buy",
-	 [3] = 1,
-	 [4] = 1
-	}
-	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-	end
-	end
-	end)
-
 
 Tabs.Shop:AddButton({
 	Title = "Geppo",
