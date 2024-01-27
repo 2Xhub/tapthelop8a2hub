@@ -3,7 +3,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
-    Title = "Tập Thể Lớp 8A2 Hub",
+    Title = "ChiLy-X Hub",
     SubTitle = "by lethanhdat_yeuem",
     TabWidth = 160,
     Size = UDim2.fromOffset(450, 300),
