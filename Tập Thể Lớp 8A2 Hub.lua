@@ -4374,7 +4374,14 @@ end
         Content = "Setting Farm"
     })
 
-    local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = "Fast Attack", Default = true })
+local ToggleF = Tabs.Setting:AddToggle("ToggleF", {Title = "Fast Attack Deley", Default = false })
+ToggleF:OnChanged(function(Value)
+   SkillF = Value
+    end)
+Options.ToggleF:SetValue(true)
+
+
+    local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = "Fast Attack [ New ]", Default = true })
     ToggleFastAttack:OnChanged(function(vu)
         FastAttack = vu
     end)
@@ -4383,7 +4390,7 @@ end
 
 
 
-_G.FastAttackDelay = 0.185
+_G.FastAttackDelay = 0.125
 
     local Client = game.Players.LocalPlayer
     local STOP = require(Client.PlayerScripts.CombatFramework.Particle)
@@ -4482,7 +4489,7 @@ CamShake:Stop()
         if BringMobs then
         pcall(function()
           for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-          if not string.find(v.Name,"Boss") and v.Name == MonFarm and (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 250 then
+          if not string.find(v.Name,"Boss") and v.Name == MonFarm and (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 270 then
           if InMyNetWork(v.HumanoidRootPart) then
             if InMyNetWork(v.HumanoidRootPart) then
           v.HumanoidRootPart.CFrame = FarmPos
@@ -4534,7 +4541,7 @@ end
 
 
 
-local ToggleRemove = Tabs.Setting:AddToggle("ToggleRemove", {Title = "Anti Ban + Anti Afk", Default = true })
+local ToggleRemove = Tabs.Setting:AddToggle("ToggleRemove", {Title = "Anti Ban + Anti Afk [ Don't Off ]", Default = true })
 ToggleRemove:OnChanged(function(Value)
     FaiFaoRemovetext = Value
     end)
@@ -4583,12 +4590,6 @@ ToggleV:OnChanged(function(Value)
 end)
 Options.ToggleV:SetValue(false)
 
-
-local ToggleF = Tabs.Setting:AddToggle("ToggleF", {Title = "Skill F", Default = true })
-ToggleF:OnChanged(function(Value)
-   SkillF = Value
-    end)
-Options.ToggleF:SetValue(false)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Stats
