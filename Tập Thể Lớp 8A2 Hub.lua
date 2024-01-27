@@ -4,7 +4,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "ChiLy-X Hub",
-    SubTitle = "by lethanhdat_yeuem",
+    SubTitle = "by lethanhdat_yeuem | dicord:https://discord.com/invite/FSxKCuqT",
     TabWidth = 160,
     Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
@@ -4383,7 +4383,7 @@ end
 
 
 
-_G.FastAttackDelay = 0.15
+_G.FastAttackDelay = 0.185
 
     local Client = game.Players.LocalPlayer
     local STOP = require(Client.PlayerScripts.CombatFramework.Particle)
